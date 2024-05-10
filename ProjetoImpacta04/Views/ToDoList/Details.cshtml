@@ -1,0 +1,16 @@
+﻿@model ToDoList
+<h1>Detalhes da Lista de Tarefas</h1>
+
+Id: @Model.ToDoListId
+<br />
+Descrição: @Model.Content
+<br />
+Categoria: @Model.Category
+<br />
+Data de Vencimento: @Model.DateExpiration
+<br />
+Status: @Model.Status
+<br />
+<td>
+    <a asp-action="Delete" asp-route-id="@Model.ToDoListId" class="btn btn-sm btn-danger">Deletar Produto</a>
+</td>

@@ -1,0 +1,64 @@
+﻿ <script src="./js/site.js"></script>
+ @model List<ToDoList>
+<h2>Lista de Produtos</h2>
+
+<p>
+    <a asp-action="Create">Adicionar uma nova tarefa</a> @* estilizar botao com cor azul e icone de + *@
+</p>
+<form asp-action="Marcarcompleto" method="post" asp-route-id="">
+
+<table class="table"> @* Estilizar essa parte da tabela com cor azul bem claro *@
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Descrição</th>
+            <th>Categoria</th>
+            <th>Data de Ínicio</th>
+            <th>Data de Vencimento</th>
+            <th>Status</th>
+            <th class="w-25"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var todolist in Model)
+        {
+            string atrasado = todolist.Atrasado ? "bg-warning" : "";
+            <tr>
+                <td>@todolist.ToDoListId</td>
+                <td>@todolist.Content</td>
+                <td>@todolist.Category</td>
+                <td>@todolist.DateStart.ToString("dd/MM/yyyy")</td>
+                <td class="@atrasado">@todolist.DateExpiration?.ToString("dd/MM/yyyy")</td>
+                <td class="@atrasado">@todolist.Status?.ToString()</td>
+                <td>
+                    @if(todolist.Status == "A Fazer")
+                    {
+                        <button type="submit" class="btn btn-primary btn-sm" id="btnCompletar" name="@nameof(ToDoList.ToDoListId)" value="@todolist.ToDoListId">
+                            Completar
+                        </button>
+                    }
+                    </td>
+
+                    <td>
+                    <a asp-action="Edit" asp-route-id="@todolist.ToDoListId" class="btn btn-sm btn-secondary">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@todolist.ToDoListId" class="btn btn-sm btn-info">Detalhes</a> |
+                    <a asp-action="Delete" asp-route-id="@todolist.ToDoListId" class="btn btn-sm btn-danger">Deletar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+</form>
+@* 
+<script>
+    document.getElementById("btnCompletar").addEventListener("click", function () {
+        
+        todolist.Status = "Concluído";
+
+        
+        window.location.href = "/Index"; 
+
+       
+    });
+</script>
+ *@

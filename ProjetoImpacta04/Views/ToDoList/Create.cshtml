@@ -1,24 +1,28 @@
 ﻿@model ToDoList
 
-<h2>Adicionar uma nova Lista</h2>
+<h2 class="text-center">Adicionar uma nova Lista</h2>
+
+<hr />
+<div class="container">
+    <div class="row justify-content-center offset-md-3">
 
 <form asp-action="Create" method="post">
-    <div class="form-group">
-        <label asp-for="Content" class="control-label"></label>
-        <input asp-for="Content" class="form-control" />
-        <span asp-validation-for="Content" class="text-danger"></span>
+            <div class="form-group col-md-8 ">
+                <label asp-for="Content" class="control-label"></label>
+                <input asp-for="Content" class="form-control" />
+        <span asp-validation-for="Content" class="text-danger "></span>
     </div>
-    <div class="form-group">
+            <div class="form-group col-md-8">
         <label asp-for="Category" class="control-label"></label>
         <input asp-for="Category" class="form-control" />
         <span asp-validation-for="Category" class="text-danger"></span>
     </div>
-    <div class="form-group">
+            <div class="form-group col-md-8">
         <label asp-for="DateExpiration" class="control-label"></label>
         <input asp-for="DateExpiration" class="form-control" />
         <span asp-validation-for="DateExpiration" class="text-danger"></span>
     </div>
-    <div class="form-group">
+            <div class="form-group col-md-8">
         <label asp-for="Status" class="control-label"></label>
         <select asp-for="Status" class="form-select" aria-label="Default select example">
             <option selected>Selecione a opção</option>
@@ -27,8 +31,12 @@
         </select>
         <span asp-validation-for="Status" class="text-danger"></span>
     </div>
-    
-    <button type="submit" class="btn btn-primary">Adicionar</button>
+    </<div>
+                <br /><br /><br /><br />
+    </div>
 
+            <div class="text-center">
+    <button type="submit" class="btn btn-primary ">Adicionar</button>
 
+    </div>
 </form>

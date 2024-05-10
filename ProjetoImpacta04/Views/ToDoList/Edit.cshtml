@@ -1,25 +1,30 @@
 ﻿@model ToDoList
 
-<h2>Editar Lista</h2>
+<h2 class="text-center m-3">Editar Lista</h2>
+
+<hr />
+<div class="container">
+    <div class="row justify-content-center offset-md-4">
+
 
 <form asp-action="Edit" method="post">
     <input type="hidden" asp-for="ToDoListId" />
-    <div class="form-group">
+            <div class="form-group col-md-6">
         <label asp-for="Content" class="control-label"></label>
         <input asp-for="Content" class="form-control" />
         <span asp-validation-for="Content" class="text-danger"></span>
     </div>
-    <div class="form-group">
+            <div class="form-group col-md-6">
         <label asp-for="Category" class="control-label"></label>
         <input asp-for="Category" class="form-control" />
         <span asp-validation-for="Category" class="text-danger"></span>
     </div>
-    <div class="form-group">
+            <div class="form-group col-md-6">
         <label asp-for="DateExpiration" class="control-label"></label>
         <input asp-for="DateExpiration" class="form-control" />
         <span asp-validation-for="DateExpiration" class="text-danger"></span>
     </div>
-    <div class="form-group">
+            <div class="form-group col-md-6">
         <label asp-for="Status" class="control-label"></label>
          <select asp-for="Status" class="form-select" aria-label="Default select example">
             <option selected>Selecione a opção</option>
@@ -32,3 +37,5 @@
     <button type="submit" class="btn btn-primary">Salvar</button>
     <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
 </form>
+</div>
+</div>

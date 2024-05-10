@@ -18,6 +18,7 @@ namespace ProjetoImpacta04.Models
         [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         public DateTime? DateExpiration { get; set; }
         [Display(Name = "Status")]
+        [Required(ErrorMessage = "Selecione um status!")]
         public string? Status { get; set; }
         public bool Atrasado => Status == "A Fazer" && DateExpiration < DateTime.Today;
        

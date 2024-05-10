@@ -8,10 +8,10 @@ namespace ProjetoImpacta04.Controllers
     {
         private static List<ToDoList> _todolist = new List<ToDoList>()
     {
-        new ToDoList { ToDoListId= 1, Content="Lavar roupa", Category="Casa", Status="Concluído"},
-        new ToDoList { ToDoListId= 2, Content="Lavar pratos", Category="Casa", Status="A Fazer"},
-        new ToDoList { ToDoListId= 3, Content="Estudar .Net", Category="Estudos", Status="Concluído"},
-        new ToDoList { ToDoListId= 4, Content="Malhar perna", Category="Academia", Status = "A Fazer"}
+        new ToDoList { ToDoListId= 1, Content="Lavar roupa", Category="Casa", Status="A Fazer"},
+        new ToDoList { ToDoListId= 2, Content="Lavar pratos", Category="Casa", Status = "Concluído"},
+        new ToDoList { ToDoListId= 3, Content="Estudar .Net", Category="Estudos", Status="A Fazer"},
+        new ToDoList { ToDoListId= 4, Content="Malhar perna", Category="Academia", Status="Concluído"}
         
     };
         public IActionResult Index()
@@ -19,6 +19,7 @@ namespace ProjetoImpacta04.Controllers
             return View(_todolist);
         }
 
+     
 
         public IActionResult Details(int id)
         {
